@@ -1,0 +1,2297 @@
+"ClientMenu"
+{
+	"CallVote,Zombie,Alive"
+	{
+		"Title"		"Zombie Chatter"
+		"1"
+		{
+			"command"	"vocalize PlayerZombieTaunt"
+			"label"		"Grrrr"
+		}
+	}
+	"CallVote,Survivor"
+	{
+		"Title"		"Calling a Vote"
+		"1"
+		{
+			"command"	"show_menu Kick"
+			"label"		"Kick a Survivor..."
+		}
+		"2"
+		{
+			"command"	"show_menu Difficulty"
+			"label"		"Change game difficulty from <cvar z_difficulty>..."
+			"invalidLabel"		"Cannot change difficulty after the mission starts"
+			"MissionStartOnly" "1"
+		}
+		"3"
+		{
+			"command"	"show_menu NextMission"
+			"label"		"Change Next Mission..."
+		}
+		"4"
+		{
+			"command"	"callvote RestartGame"
+			"label"		"Restart the game"
+		}
+		"5"
+		{
+			"command"	"callvote ScrambleTeams"
+			"label"		"Scramble teams next game"
+		}
+		"6"
+		{
+			"command"	"show_menu GrenadeBan"
+			"label"		"Ban grenades from someone..."
+		}
+		"7"
+		{
+			"command"	"show_menu LiftGrenadeBan"
+			"label"		"Un-ban grenades from someone..."
+		}
+		"0"
+		{
+			"command"	""
+			"label"		"Exit"
+		}
+	}
+	"CallVote"
+	{
+		"Title"		"Calling a Vote"
+		"3"
+		{
+			"command"	"show_menu NextMission"
+			"label"		"Change Next Mission..."
+		}
+		"0"
+		{
+			"command"	""
+			"label"		"Exit"
+		}
+	}
+	"NextMissionNow"
+	{
+		"Title"		"Vote to change mission now"
+		"1"
+		{
+			"command"	"callvote ChangeMission Airport"
+			"label"		"Airport"
+			"ignoremission" "Airport"
+		}
+		"2"
+		{
+			"command"	"callvote ChangeMission smalltown"
+			"label"		"Small Town"
+			"ignoremission" "smalltown"
+		}
+		"3"
+		{
+			"command"	"callvote ChangeMission Hospital"
+			"label"		"Hospital"
+			"ignoremission" "Hospital"
+		}
+		"4"
+		{
+			"command"	"callvote ChangeMission Farm"
+			"label"		"Farm"
+			"ignoremission" "Farm"
+		}
+		"0"
+		{
+			"command"	""
+			"label"		"Exit"
+		}
+	}
+	"NextMissionLater"
+	{
+		"Title"		"Vote to set next mission for later"
+		"1"
+		{
+			"command"	"callvote NextMission Airport"
+			"label"		"Airport"
+			"ignoreNextMission" "Airport"
+		}
+		"2"
+		{
+			"command"	"callvote NextMission smalltown"
+			"label"		"Small Town"
+			"ignoreNextMission" "Small Town"
+		}
+		"3"
+		{
+			"command"	"callvote NextMission Hospital"
+			"label"		"Hospital"
+			"ignoreNextMission" "Hospital"
+		}
+		"4"
+		{
+			"command"	"callvote NextMission Farm"
+			"label"		"Farm"
+			"ignoreNextMission" "Farm"
+		}
+		"0"
+		{
+			"command"	""
+			"label"		"Exit"
+		}
+	}
+	"NextMission"
+	{
+		"Title" "Vote to change next mission"
+		"1"
+		{
+			"command"	"show_menu NextMissionNow"
+			"label"		"Change mission now..."
+		}
+		"2"
+		{
+			"command"	"show_menu NextMissionLater"
+			"label"		"Set next mission for later..."
+		}
+	}
+	"Difficulty,Survivor"
+	{
+		"Title"		"Vote to change difficulty from <cvar z_difficulty>"
+		"1"
+		{
+			"command"	"callvote ChangeDifficulty Impossible"
+			"label"		"Impossible"
+			"ignorevar"
+			{
+				"cvar"	"z_difficulty"
+				"value"	"Impossible"
+			}
+		}
+		"2"
+		{
+			"command"	"callvote ChangeDifficulty Expert"
+			"label"		"Expert"
+			"ignorevar"
+			{
+				"cvar"	"z_difficulty"
+				"value"	"Expert"
+			}
+		}
+		"3"
+		{
+			"command"	"callvote ChangeDifficulty Hard"
+			"label"		"Hard"
+			"ignorevar"
+			{
+				"cvar"	"z_difficulty"
+				"value"	"Hard"
+			}
+		}
+		"4"
+		{
+			"command"	"callvote ChangeDifficulty Normal"
+			"label"		"Normal"
+			"ignorevar"
+			{
+				"cvar"	"z_difficulty"
+				"value"	"Normal"
+			}
+		}
+		"0"
+		{
+			"command"	""
+			"label"		"Exit"
+		}
+	}
+	"Kick,Survivor"
+	{
+		"Title"		"Vote to kick a survivor"
+		"1"
+		{
+			"command"	"voteproxy Kick *Survivor1"
+			"label"		"*Survivor1"
+		}
+		"2"
+		{
+			"command"	"voteproxy Kick *Survivor2"
+			"label"		"*Survivor2"
+		}
+		"3"
+		{
+			"command"	"voteproxy Kick *Survivor3"
+			"label"		"*Survivor3"
+		}
+		"4"
+		{
+			"command"	"voteproxy Kick *Survivor4"
+			"label"		"*Survivor4"
+		}
+		"0"
+		{
+			"command"	""
+			"label"		"Exit"
+		}
+	}
+	"GrenadeBan,Survivor"
+	{
+		"Title"		"Vote on banning grenades"
+		"1"
+		{
+			"command"	"voteproxy GrenadeBan *ConnectedSurvivor1"
+			"label"		"*ConnectedSurvivor1"
+		}
+		"2"
+		{
+			"command"	"voteproxy GrenadeBan *ConnectedSurvivor2"
+			"label"		"*ConnectedSurvivor2"
+		}
+		"3"
+		{
+			"command"	"voteproxy GrenadeBan *ConnectedSurvivor3"
+			"label"		"*ConnectedSurvivor3"
+		}
+		"4"
+		{
+			"command"	"voteproxy GrenadeBan *ConnectedSurvivor4"
+			"label"		"*ConnectedSurvivor4"
+		}
+		"0"
+		{
+			"command"	""
+			"label"		"Exit"
+		}
+	}
+	"LiftGrenadeBan,Survivor"
+	{
+		"Title"		"Vote on allowing grenades"
+		"1"
+		{
+			"command"	"voteproxy LiftGrenadeBan *ConnectedSurvivor1"
+			"label"		"*ConnectedSurvivor1"
+		}
+		"2"
+		{
+			"command"	"voteproxy LiftGrenadeBan *ConnectedSurvivor2"
+			"label"		"*ConnectedSurvivor2"
+		}
+		"3"
+		{
+			"command"	"voteproxy LiftGrenadeBan *ConnectedSurvivor3"
+			"label"		"*ConnectedSurvivor3"
+		}
+		"4"
+		{
+			"command"	"voteproxy LiftGrenadeBan *ConnectedSurvivor4"
+			"label"		"*ConnectedSurvivor4"
+		}
+		"0"
+		{
+			"command"	""
+			"label"		"Exit"
+		}
+	}
+	"MVP,Survivor"
+	{
+		"Title"		"Vote on the game's Most Valuable Player"
+		"1"
+		{
+			"command"	"voteMVP 1"
+			"label"		"*Survivor1"
+		}
+		"2"
+		{
+			"command"	"voteMVP 2"
+			"label"		"*Survivor2"
+		}
+		"3"
+		{
+			"command"	"voteMVP 3"
+			"label"		"*Survivor3"
+		}
+		"4"
+		{
+			"command"	"voteMVP 4"
+			"label"		"*Survivor4"
+		}
+		"0"
+		{
+			"command"	""
+			"label"		"Exit"
+		}
+	}
+	"GatoEmotes"
+	{
+		"Title"		"Cat emotes"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1a; show_menu GatoEmotes2"
+			"label"		"Stay / Follow"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2a; show_menu GatoEmotes2"
+			"label"		"Meow"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3a; show_menu GatoEmotes2"
+			"label"		"Knead"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4a; show_menu GatoEmotes2"
+			"label"		"Stretch"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5a; show_menu GatoEmotes2"
+			"label"		"Sniff"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6a; show_menu GatoEmotes2"
+			"label"		"Chase tail"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7a; show_menu GatoEmotes2"
+			"label"		"Roll over"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8a; show_menu GatoEmotes2"
+			"label"		"Yawn"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9a; show_menu GatoEmotes2"
+			"label"		"Sleep"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"Close"
+		}
+	}
+	"GatoEmotes2"
+	{
+		"Title"		"Cat emotes"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1b; show_menu GatoEmotes"
+			"label"		"Stay / Follow"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2b; show_menu GatoEmotes"
+			"label"		"Meow"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3b; show_menu GatoEmotes"
+			"label"		"Knead"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4b; show_menu GatoEmotes"
+			"label"		"Stretch"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5b; show_menu GatoEmotes"
+			"label"		"Sniff"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6b; show_menu GatoEmotes"
+			"label"		"Chase tail"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7b; show_menu GatoEmotes"
+			"label"		"Roll over"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8b; show_menu GatoEmotes"
+			"label"		"Yawn"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9b; show_menu GatoEmotes"
+			"label"		"Sleep"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"Close"
+		}
+	}
+	"GatoLook"
+	{
+		"Title"		"Cat look"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1a; show_menu GatoLook2"
+			"label"		"Tuxedo"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2a; show_menu GatoLook2"
+			"label"		"Orange"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3a; show_menu GatoLook2"
+			"label"		"Brown tabby"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4a; show_menu GatoLook2"
+			"label"		"Siamese"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"Close"
+		}
+	}
+	"GatoLook2"
+	{
+		"Title"		"Cat look"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1b; show_menu GatoLook"
+			"label"		"Tuxedo"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2b; show_menu GatoLook"
+			"label"		"Orange"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3b; show_menu GatoLook"
+			"label"		"Brown tabby"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4b; show_menu GatoLook"
+			"label"		"Siamese"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"Close"
+		}
+	}
+	"GatoAcc"
+	{
+		"Title"		"Cat accessories"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1a; show_menu GatoAcc2"
+			"label"		"Witch hat"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2a; show_menu GatoAcc2"
+			"label"		"Bat wings"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3a; show_menu GatoAcc2"
+			"label"		"Remove all"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"Close"
+		}
+	}
+	"GatoAcc2"
+	{
+		"Title"		"Cat accessories"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1b; show_menu GatoAcc"
+			"label"		"Witch hat"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2b; show_menu GatoAcc"
+			"label"		"Bat wings"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3b; show_menu GatoAcc"
+			"label"		"Remove all"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"Close"
+		}
+	}
+	"GatoEmotesES"
+	{
+		"Title"		"Emotes del gato"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1a; show_menu GatoEmotesES2"
+			"label"		"Quieto / Seguir"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2a; show_menu GatoEmotesES2"
+			"label"		"Maullar"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3a; show_menu GatoEmotesES2"
+			"label"		"Amasar"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4a; show_menu GatoEmotesES2"
+			"label"		"Estirarse"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5a; show_menu GatoEmotesES2"
+			"label"		"Olfatear"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6a; show_menu GatoEmotesES2"
+			"label"		"Perseguir la cola"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7a; show_menu GatoEmotesES2"
+			"label"		"Rodar"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8a; show_menu GatoEmotesES2"
+			"label"		"Bostezar"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9a; show_menu GatoEmotesES2"
+			"label"		"Dormir"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"Cerrar"
+		}
+	}
+	"GatoEmotesES2"
+	{
+		"Title"		"Emotes del gato"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1b; show_menu GatoEmotesES"
+			"label"		"Quieto / Seguir"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2b; show_menu GatoEmotesES"
+			"label"		"Maullar"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3b; show_menu GatoEmotesES"
+			"label"		"Amasar"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4b; show_menu GatoEmotesES"
+			"label"		"Estirarse"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5b; show_menu GatoEmotesES"
+			"label"		"Olfatear"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6b; show_menu GatoEmotesES"
+			"label"		"Perseguir la cola"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7b; show_menu GatoEmotesES"
+			"label"		"Rodar"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8b; show_menu GatoEmotesES"
+			"label"		"Bostezar"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9b; show_menu GatoEmotesES"
+			"label"		"Dormir"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"Cerrar"
+		}
+	}
+	"GatoLookES"
+	{
+		"Title"		"Apariencia del gato"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1a; show_menu GatoLookES2"
+			"label"		"Tuxedo"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2a; show_menu GatoLookES2"
+			"label"		"Naranja"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3a; show_menu GatoLookES2"
+			"label"		"Atigrado café"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4a; show_menu GatoLookES2"
+			"label"		"Siamés"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"Cerrar"
+		}
+	}
+	"GatoLookES2"
+	{
+		"Title"		"Apariencia del gato"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1b; show_menu GatoLookES"
+			"label"		"Tuxedo"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2b; show_menu GatoLookES"
+			"label"		"Naranja"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3b; show_menu GatoLookES"
+			"label"		"Atigrado café"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4b; show_menu GatoLookES"
+			"label"		"Siamés"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"Cerrar"
+		}
+	}
+	"GatoAccES"
+	{
+		"Title"		"Accesorios del gato"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1a; show_menu GatoAccES2"
+			"label"		"Sombrero de bruja"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2a; show_menu GatoAccES2"
+			"label"		"Alas de murciélago"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3a; show_menu GatoAccES2"
+			"label"		"Quitar todo"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"Cerrar"
+		}
+	}
+	"GatoAccES2"
+	{
+		"Title"		"Accesorios del gato"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1b; show_menu GatoAccES"
+			"label"		"Sombrero de bruja"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2b; show_menu GatoAccES"
+			"label"		"Alas de murciélago"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3b; show_menu GatoAccES"
+			"label"		"Quitar todo"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"Cerrar"
+		}
+	}
+	"GatoEmotesDE"
+	{
+		"Title"		"Katzen-Emotes"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1a; show_menu GatoEmotesDE2"
+			"label"		"Bleiben / Folgen"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2a; show_menu GatoEmotesDE2"
+			"label"		"Miauen"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3a; show_menu GatoEmotesDE2"
+			"label"		"Treteln"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4a; show_menu GatoEmotesDE2"
+			"label"		"Strecken"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5a; show_menu GatoEmotesDE2"
+			"label"		"Schnuppern"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6a; show_menu GatoEmotesDE2"
+			"label"		"Schwanz jagen"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7a; show_menu GatoEmotesDE2"
+			"label"		"Rollen"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8a; show_menu GatoEmotesDE2"
+			"label"		"Gähnen"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9a; show_menu GatoEmotesDE2"
+			"label"		"Schlafen"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"Schließen"
+		}
+	}
+	"GatoEmotesDE2"
+	{
+		"Title"		"Katzen-Emotes"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1b; show_menu GatoEmotesDE"
+			"label"		"Bleiben / Folgen"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2b; show_menu GatoEmotesDE"
+			"label"		"Miauen"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3b; show_menu GatoEmotesDE"
+			"label"		"Treteln"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4b; show_menu GatoEmotesDE"
+			"label"		"Strecken"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5b; show_menu GatoEmotesDE"
+			"label"		"Schnuppern"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6b; show_menu GatoEmotesDE"
+			"label"		"Schwanz jagen"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7b; show_menu GatoEmotesDE"
+			"label"		"Rollen"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8b; show_menu GatoEmotesDE"
+			"label"		"Gähnen"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9b; show_menu GatoEmotesDE"
+			"label"		"Schlafen"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"Schließen"
+		}
+	}
+	"GatoLookDE"
+	{
+		"Title"		"Aussehen der Katze"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1a; show_menu GatoLookDE2"
+			"label"		"Tuxedo"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2a; show_menu GatoLookDE2"
+			"label"		"Orange"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3a; show_menu GatoLookDE2"
+			"label"		"Braun getigert"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4a; show_menu GatoLookDE2"
+			"label"		"Siam"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"Schließen"
+		}
+	}
+	"GatoLookDE2"
+	{
+		"Title"		"Aussehen der Katze"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1b; show_menu GatoLookDE"
+			"label"		"Tuxedo"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2b; show_menu GatoLookDE"
+			"label"		"Orange"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3b; show_menu GatoLookDE"
+			"label"		"Braun getigert"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4b; show_menu GatoLookDE"
+			"label"		"Siam"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"Schließen"
+		}
+	}
+	"GatoAccDE"
+	{
+		"Title"		"Katzen-Accessoires"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1a; show_menu GatoAccDE2"
+			"label"		"Hexenhut"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2a; show_menu GatoAccDE2"
+			"label"		"Fledermausflügel"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3a; show_menu GatoAccDE2"
+			"label"		"Alles abnehmen"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"Schließen"
+		}
+	}
+	"GatoAccDE2"
+	{
+		"Title"		"Katzen-Accessoires"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1b; show_menu GatoAccDE"
+			"label"		"Hexenhut"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2b; show_menu GatoAccDE"
+			"label"		"Fledermausflügel"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3b; show_menu GatoAccDE"
+			"label"		"Alles abnehmen"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"Schließen"
+		}
+	}
+	"GatoEmotesFR"
+	{
+		"Title"		"Emotes du chat"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1a; show_menu GatoEmotesFR2"
+			"label"		"Rester / Suivre"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2a; show_menu GatoEmotesFR2"
+			"label"		"Miauler"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3a; show_menu GatoEmotesFR2"
+			"label"		"Pétrir"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4a; show_menu GatoEmotesFR2"
+			"label"		"S'étirer"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5a; show_menu GatoEmotesFR2"
+			"label"		"Renifler"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6a; show_menu GatoEmotesFR2"
+			"label"		"Chasser sa queue"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7a; show_menu GatoEmotesFR2"
+			"label"		"Se rouler"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8a; show_menu GatoEmotesFR2"
+			"label"		"Bâiller"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9a; show_menu GatoEmotesFR2"
+			"label"		"Dormir"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"Fermer"
+		}
+	}
+	"GatoEmotesFR2"
+	{
+		"Title"		"Emotes du chat"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1b; show_menu GatoEmotesFR"
+			"label"		"Rester / Suivre"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2b; show_menu GatoEmotesFR"
+			"label"		"Miauler"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3b; show_menu GatoEmotesFR"
+			"label"		"Pétrir"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4b; show_menu GatoEmotesFR"
+			"label"		"S'étirer"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5b; show_menu GatoEmotesFR"
+			"label"		"Renifler"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6b; show_menu GatoEmotesFR"
+			"label"		"Chasser sa queue"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7b; show_menu GatoEmotesFR"
+			"label"		"Se rouler"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8b; show_menu GatoEmotesFR"
+			"label"		"Bâiller"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9b; show_menu GatoEmotesFR"
+			"label"		"Dormir"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"Fermer"
+		}
+	}
+	"GatoLookFR"
+	{
+		"Title"		"Apparence du chat"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1a; show_menu GatoLookFR2"
+			"label"		"Tuxedo"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2a; show_menu GatoLookFR2"
+			"label"		"Roux"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3a; show_menu GatoLookFR2"
+			"label"		"Tigré brun"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4a; show_menu GatoLookFR2"
+			"label"		"Siamois"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"Fermer"
+		}
+	}
+	"GatoLookFR2"
+	{
+		"Title"		"Apparence du chat"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1b; show_menu GatoLookFR"
+			"label"		"Tuxedo"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2b; show_menu GatoLookFR"
+			"label"		"Roux"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3b; show_menu GatoLookFR"
+			"label"		"Tigré brun"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4b; show_menu GatoLookFR"
+			"label"		"Siamois"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"Fermer"
+		}
+	}
+	"GatoAccFR"
+	{
+		"Title"		"Accessoires du chat"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1a; show_menu GatoAccFR2"
+			"label"		"Chapeau de sorcière"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2a; show_menu GatoAccFR2"
+			"label"		"Ailes de chauve-souris"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3a; show_menu GatoAccFR2"
+			"label"		"Tout enlever"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"Fermer"
+		}
+	}
+	"GatoAccFR2"
+	{
+		"Title"		"Accessoires du chat"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1b; show_menu GatoAccFR"
+			"label"		"Chapeau de sorcière"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2b; show_menu GatoAccFR"
+			"label"		"Ailes de chauve-souris"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3b; show_menu GatoAccFR"
+			"label"		"Tout enlever"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"Fermer"
+		}
+	}
+	"GatoEmotesIT"
+	{
+		"Title"		"Emote del gatto"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1a; show_menu GatoEmotesIT2"
+			"label"		"Restare / Seguire"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2a; show_menu GatoEmotesIT2"
+			"label"		"Miagolare"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3a; show_menu GatoEmotesIT2"
+			"label"		"Impastare"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4a; show_menu GatoEmotesIT2"
+			"label"		"Stiracchiarsi"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5a; show_menu GatoEmotesIT2"
+			"label"		"Annusare"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6a; show_menu GatoEmotesIT2"
+			"label"		"Rincorrere la coda"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7a; show_menu GatoEmotesIT2"
+			"label"		"Rotolarsi"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8a; show_menu GatoEmotesIT2"
+			"label"		"Sbadigliare"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9a; show_menu GatoEmotesIT2"
+			"label"		"Dormire"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"Chiudi"
+		}
+	}
+	"GatoEmotesIT2"
+	{
+		"Title"		"Emote del gatto"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1b; show_menu GatoEmotesIT"
+			"label"		"Restare / Seguire"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2b; show_menu GatoEmotesIT"
+			"label"		"Miagolare"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3b; show_menu GatoEmotesIT"
+			"label"		"Impastare"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4b; show_menu GatoEmotesIT"
+			"label"		"Stiracchiarsi"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5b; show_menu GatoEmotesIT"
+			"label"		"Annusare"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6b; show_menu GatoEmotesIT"
+			"label"		"Rincorrere la coda"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7b; show_menu GatoEmotesIT"
+			"label"		"Rotolarsi"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8b; show_menu GatoEmotesIT"
+			"label"		"Sbadigliare"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9b; show_menu GatoEmotesIT"
+			"label"		"Dormire"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"Chiudi"
+		}
+	}
+	"GatoLookIT"
+	{
+		"Title"		"Aspetto del gatto"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1a; show_menu GatoLookIT2"
+			"label"		"Tuxedo"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2a; show_menu GatoLookIT2"
+			"label"		"Rosso"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3a; show_menu GatoLookIT2"
+			"label"		"Tigrato marrone"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4a; show_menu GatoLookIT2"
+			"label"		"Siamese"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"Chiudi"
+		}
+	}
+	"GatoLookIT2"
+	{
+		"Title"		"Aspetto del gatto"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1b; show_menu GatoLookIT"
+			"label"		"Tuxedo"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2b; show_menu GatoLookIT"
+			"label"		"Rosso"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3b; show_menu GatoLookIT"
+			"label"		"Tigrato marrone"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4b; show_menu GatoLookIT"
+			"label"		"Siamese"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"Chiudi"
+		}
+	}
+	"GatoAccIT"
+	{
+		"Title"		"Accessori del gatto"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1a; show_menu GatoAccIT2"
+			"label"		"Cappello da strega"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2a; show_menu GatoAccIT2"
+			"label"		"Ali di pipistrello"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3a; show_menu GatoAccIT2"
+			"label"		"Togli tutto"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"Chiudi"
+		}
+	}
+	"GatoAccIT2"
+	{
+		"Title"		"Accessori del gatto"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1b; show_menu GatoAccIT"
+			"label"		"Cappello da strega"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2b; show_menu GatoAccIT"
+			"label"		"Ali di pipistrello"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3b; show_menu GatoAccIT"
+			"label"		"Togli tutto"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"Chiudi"
+		}
+	}
+	"GatoEmotesRU"
+	{
+		"Title"		"Эмоции кота"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1a; show_menu GatoEmotesRU2"
+			"label"		"Ждать / Следовать"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2a; show_menu GatoEmotesRU2"
+			"label"		"Мяукнуть"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3a; show_menu GatoEmotesRU2"
+			"label"		"Месить лапками"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4a; show_menu GatoEmotesRU2"
+			"label"		"Потянуться"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5a; show_menu GatoEmotesRU2"
+			"label"		"Принюхаться"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6a; show_menu GatoEmotesRU2"
+			"label"		"Ловить хвост"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7a; show_menu GatoEmotesRU2"
+			"label"		"Кувыркнуться"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8a; show_menu GatoEmotesRU2"
+			"label"		"Зевнуть"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9a; show_menu GatoEmotesRU2"
+			"label"		"Спать"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"Закрыть"
+		}
+	}
+	"GatoEmotesRU2"
+	{
+		"Title"		"Эмоции кота"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1b; show_menu GatoEmotesRU"
+			"label"		"Ждать / Следовать"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2b; show_menu GatoEmotesRU"
+			"label"		"Мяукнуть"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3b; show_menu GatoEmotesRU"
+			"label"		"Месить лапками"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4b; show_menu GatoEmotesRU"
+			"label"		"Потянуться"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5b; show_menu GatoEmotesRU"
+			"label"		"Принюхаться"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6b; show_menu GatoEmotesRU"
+			"label"		"Ловить хвост"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7b; show_menu GatoEmotesRU"
+			"label"		"Кувыркнуться"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8b; show_menu GatoEmotesRU"
+			"label"		"Зевнуть"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9b; show_menu GatoEmotesRU"
+			"label"		"Спать"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"Закрыть"
+		}
+	}
+	"GatoLookRU"
+	{
+		"Title"		"Внешность кота"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1a; show_menu GatoLookRU2"
+			"label"		"Смокинг"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2a; show_menu GatoLookRU2"
+			"label"		"Рыжий"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3a; show_menu GatoLookRU2"
+			"label"		"Бурый полосатый"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4a; show_menu GatoLookRU2"
+			"label"		"Сиамский"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"Закрыть"
+		}
+	}
+	"GatoLookRU2"
+	{
+		"Title"		"Внешность кота"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1b; show_menu GatoLookRU"
+			"label"		"Смокинг"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2b; show_menu GatoLookRU"
+			"label"		"Рыжий"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3b; show_menu GatoLookRU"
+			"label"		"Бурый полосатый"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4b; show_menu GatoLookRU"
+			"label"		"Сиамский"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"Закрыть"
+		}
+	}
+	"GatoAccRU"
+	{
+		"Title"		"Аксессуары кота"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1a; show_menu GatoAccRU2"
+			"label"		"Шляпа ведьмы"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2a; show_menu GatoAccRU2"
+			"label"		"Крылья летучей мыши"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3a; show_menu GatoAccRU2"
+			"label"		"Снять всё"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"Закрыть"
+		}
+	}
+	"GatoAccRU2"
+	{
+		"Title"		"Аксессуары кота"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1b; show_menu GatoAccRU"
+			"label"		"Шляпа ведьмы"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2b; show_menu GatoAccRU"
+			"label"		"Крылья летучей мыши"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3b; show_menu GatoAccRU"
+			"label"		"Снять всё"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"Закрыть"
+		}
+	}
+	"GatoEmotesJA"
+	{
+		"Title"		"ネコのエモート"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1a; show_menu GatoEmotesJA2"
+			"label"		"待て / ついてくる"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2a; show_menu GatoEmotesJA2"
+			"label"		"鳴く"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3a; show_menu GatoEmotesJA2"
+			"label"		"ふみふみ"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4a; show_menu GatoEmotesJA2"
+			"label"		"伸びをする"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5a; show_menu GatoEmotesJA2"
+			"label"		"においを嗅ぐ"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6a; show_menu GatoEmotesJA2"
+			"label"		"しっぽを追う"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7a; show_menu GatoEmotesJA2"
+			"label"		"ごろん"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8a; show_menu GatoEmotesJA2"
+			"label"		"あくび"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9a; show_menu GatoEmotesJA2"
+			"label"		"寝る"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"閉じる"
+		}
+	}
+	"GatoEmotesJA2"
+	{
+		"Title"		"ネコのエモート"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1b; show_menu GatoEmotesJA"
+			"label"		"待て / ついてくる"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2b; show_menu GatoEmotesJA"
+			"label"		"鳴く"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3b; show_menu GatoEmotesJA"
+			"label"		"ふみふみ"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4b; show_menu GatoEmotesJA"
+			"label"		"伸びをする"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5b; show_menu GatoEmotesJA"
+			"label"		"においを嗅ぐ"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6b; show_menu GatoEmotesJA"
+			"label"		"しっぽを追う"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7b; show_menu GatoEmotesJA"
+			"label"		"ごろん"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8b; show_menu GatoEmotesJA"
+			"label"		"あくび"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9b; show_menu GatoEmotesJA"
+			"label"		"寝る"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"閉じる"
+		}
+	}
+	"GatoLookJA"
+	{
+		"Title"		"ネコの見た目"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1a; show_menu GatoLookJA2"
+			"label"		"ハチワレ"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2a; show_menu GatoLookJA2"
+			"label"		"茶トラ"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3a; show_menu GatoLookJA2"
+			"label"		"キジトラ"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4a; show_menu GatoLookJA2"
+			"label"		"シャム"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"閉じる"
+		}
+	}
+	"GatoLookJA2"
+	{
+		"Title"		"ネコの見た目"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1b; show_menu GatoLookJA"
+			"label"		"ハチワレ"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2b; show_menu GatoLookJA"
+			"label"		"茶トラ"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3b; show_menu GatoLookJA"
+			"label"		"キジトラ"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4b; show_menu GatoLookJA"
+			"label"		"シャム"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"閉じる"
+		}
+	}
+	"GatoAccJA"
+	{
+		"Title"		"ネコのアクセサリー"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1a; show_menu GatoAccJA2"
+			"label"		"魔女の帽子"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2a; show_menu GatoAccJA2"
+			"label"		"コウモリの羽"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3a; show_menu GatoAccJA2"
+			"label"		"全部外す"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"閉じる"
+		}
+	}
+	"GatoAccJA2"
+	{
+		"Title"		"ネコのアクセサリー"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1b; show_menu GatoAccJA"
+			"label"		"魔女の帽子"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2b; show_menu GatoAccJA"
+			"label"		"コウモリの羽"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3b; show_menu GatoAccJA"
+			"label"		"全部外す"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"閉じる"
+		}
+	}
+	"GatoEmotesZH"
+	{
+		"Title"		"猫咪动作"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1a; show_menu GatoEmotesZH2"
+			"label"		"待着 / 跟随"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2a; show_menu GatoEmotesZH2"
+			"label"		"喵喵叫"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3a; show_menu GatoEmotesZH2"
+			"label"		"踩奶"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4a; show_menu GatoEmotesZH2"
+			"label"		"伸懒腰"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5a; show_menu GatoEmotesZH2"
+			"label"		"嗅一嗅"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6a; show_menu GatoEmotesZH2"
+			"label"		"追尾巴"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7a; show_menu GatoEmotesZH2"
+			"label"		"打滚"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8a; show_menu GatoEmotesZH2"
+			"label"		"打哈欠"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9a; show_menu GatoEmotesZH2"
+			"label"		"睡觉"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"关闭"
+		}
+	}
+	"GatoEmotesZH2"
+	{
+		"Title"		"猫咪动作"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1b; show_menu GatoEmotesZH"
+			"label"		"待着 / 跟随"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2b; show_menu GatoEmotesZH"
+			"label"		"喵喵叫"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3b; show_menu GatoEmotesZH"
+			"label"		"踩奶"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4b; show_menu GatoEmotesZH"
+			"label"		"伸懒腰"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5b; show_menu GatoEmotesZH"
+			"label"		"嗅一嗅"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6b; show_menu GatoEmotesZH"
+			"label"		"追尾巴"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7b; show_menu GatoEmotesZH"
+			"label"		"打滚"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8b; show_menu GatoEmotesZH"
+			"label"		"打哈欠"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9b; show_menu GatoEmotesZH"
+			"label"		"睡觉"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"关闭"
+		}
+	}
+	"GatoLookZH"
+	{
+		"Title"		"猫咪外观"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1a; show_menu GatoLookZH2"
+			"label"		"奶牛猫"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2a; show_menu GatoLookZH2"
+			"label"		"橘猫"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3a; show_menu GatoLookZH2"
+			"label"		"狸花猫"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4a; show_menu GatoLookZH2"
+			"label"		"暹罗猫"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"关闭"
+		}
+	}
+	"GatoLookZH2"
+	{
+		"Title"		"猫咪外观"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1b; show_menu GatoLookZH"
+			"label"		"奶牛猫"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2b; show_menu GatoLookZH"
+			"label"		"橘猫"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3b; show_menu GatoLookZH"
+			"label"		"狸花猫"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4b; show_menu GatoLookZH"
+			"label"		"暹罗猫"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"关闭"
+		}
+	}
+	"GatoAccZH"
+	{
+		"Title"		"猫咪配饰"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1a; show_menu GatoAccZH2"
+			"label"		"女巫帽"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2a; show_menu GatoAccZH2"
+			"label"		"蝙蝠翅膀"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3a; show_menu GatoAccZH2"
+			"label"		"全部取下"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"关闭"
+		}
+	}
+	"GatoAccZH2"
+	{
+		"Title"		"猫咪配饰"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1b; show_menu GatoAccZH"
+			"label"		"女巫帽"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2b; show_menu GatoAccZH"
+			"label"		"蝙蝠翅膀"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3b; show_menu GatoAccZH"
+			"label"		"全部取下"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"关闭"
+		}
+	}
+	"GatoEmotesZHT"
+	{
+		"Title"		"貓咪動作"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1a; show_menu GatoEmotesZHT2"
+			"label"		"待著 / 跟隨"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2a; show_menu GatoEmotesZHT2"
+			"label"		"喵喵叫"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3a; show_menu GatoEmotesZHT2"
+			"label"		"踏踏"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4a; show_menu GatoEmotesZHT2"
+			"label"		"伸懶腰"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5a; show_menu GatoEmotesZHT2"
+			"label"		"嗅一嗅"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6a; show_menu GatoEmotesZHT2"
+			"label"		"追尾巴"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7a; show_menu GatoEmotesZHT2"
+			"label"		"打滾"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8a; show_menu GatoEmotesZHT2"
+			"label"		"打哈欠"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9a; show_menu GatoEmotesZHT2"
+			"label"		"睡覺"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"關閉"
+		}
+	}
+	"GatoEmotesZHT2"
+	{
+		"Title"		"貓咪動作"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_emote 1b; show_menu GatoEmotesZHT"
+			"label"		"待著 / 跟隨"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_emote 2b; show_menu GatoEmotesZHT"
+			"label"		"喵喵叫"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_emote 3b; show_menu GatoEmotesZHT"
+			"label"		"踏踏"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_emote 4b; show_menu GatoEmotesZHT"
+			"label"		"伸懶腰"
+		}
+		"5"
+		{
+			"command"	"setinfo gato_emote 5b; show_menu GatoEmotesZHT"
+			"label"		"嗅一嗅"
+		}
+		"6"
+		{
+			"command"	"setinfo gato_emote 6b; show_menu GatoEmotesZHT"
+			"label"		"追尾巴"
+		}
+		"7"
+		{
+			"command"	"setinfo gato_emote 7b; show_menu GatoEmotesZHT"
+			"label"		"打滾"
+		}
+		"8"
+		{
+			"command"	"setinfo gato_emote 8b; show_menu GatoEmotesZHT"
+			"label"		"打哈欠"
+		}
+		"9"
+		{
+			"command"	"setinfo gato_emote 9b; show_menu GatoEmotesZHT"
+			"label"		"睡覺"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_emote 0"
+			"label"		"關閉"
+		}
+	}
+	"GatoLookZHT"
+	{
+		"Title"		"貓咪外觀"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1a; show_menu GatoLookZHT2"
+			"label"		"賓士貓"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2a; show_menu GatoLookZHT2"
+			"label"		"橘貓"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3a; show_menu GatoLookZHT2"
+			"label"		"虎斑貓"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4a; show_menu GatoLookZHT2"
+			"label"		"暹羅貓"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"關閉"
+		}
+	}
+	"GatoLookZHT2"
+	{
+		"Title"		"貓咪外觀"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_look 1b; show_menu GatoLookZHT"
+			"label"		"賓士貓"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_look 2b; show_menu GatoLookZHT"
+			"label"		"橘貓"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_look 3b; show_menu GatoLookZHT"
+			"label"		"虎斑貓"
+		}
+		"4"
+		{
+			"command"	"setinfo gato_look 4b; show_menu GatoLookZHT"
+			"label"		"暹羅貓"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_look 0"
+			"label"		"關閉"
+		}
+	}
+	"GatoAccZHT"
+	{
+		"Title"		"貓咪配飾"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1a; show_menu GatoAccZHT2"
+			"label"		"女巫帽"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2a; show_menu GatoAccZHT2"
+			"label"		"蝙蝠翅膀"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3a; show_menu GatoAccZHT2"
+			"label"		"全部取下"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"關閉"
+		}
+	}
+	"GatoAccZHT2"
+	{
+		"Title"		"貓咪配飾"
+		"Duration"	"30"
+		"1"
+		{
+			"command"	"setinfo gato_acc 1b; show_menu GatoAccZHT"
+			"label"		"女巫帽"
+		}
+		"2"
+		{
+			"command"	"setinfo gato_acc 2b; show_menu GatoAccZHT"
+			"label"		"蝙蝠翅膀"
+		}
+		"3"
+		{
+			"command"	"setinfo gato_acc 3b; show_menu GatoAccZHT"
+			"label"		"全部取下"
+		}
+		"0"
+		{
+			"command"	"setinfo gato_acc 0"
+			"label"		"關閉"
+		}
+	}
+}

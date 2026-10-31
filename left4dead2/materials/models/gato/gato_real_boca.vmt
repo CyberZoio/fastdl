@@ -1,0 +1,10 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/gato/gato_real_boca"
+	"$bumpmap" "models/gato/gato_real_boca_normal"
+	"$halflambert" "1"
+	"$phong" "1"
+	"$phongexponent" "28"
+	"$phongboost" "1.4"
+	"$phongfresnelranges" "[0.3 0.65 1]"
+}
