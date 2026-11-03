@@ -1,0 +1,5 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/gato/gato_blanco_accesorios"
+	"$halflambert" "1"
+}
