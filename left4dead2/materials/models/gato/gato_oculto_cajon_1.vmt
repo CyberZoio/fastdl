@@ -1,0 +1,7 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/gato/gato_tuxedo"
+	"$no_draw" "1"
+	"$alpha" "0"
+	"$translucent" "1"
+}

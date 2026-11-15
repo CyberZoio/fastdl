@@ -1,0 +1,5 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/gato/gato_atigrado_correa"
+	"$halflambert" "1"
+}

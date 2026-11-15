@@ -1,0 +1,5 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/gato/gato_tomi_ojos"
+	"$halflambert" "1"
+}
